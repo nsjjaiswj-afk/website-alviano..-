@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hadiah Untukmu 💗</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#ffe6ed;color:#444;font-family:Arial,sans-serif;text-align:center}
+main{max-width:430px;min-height:100vh;margin:auto;background:white;padding:24px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.screen{display:none;width:100%}.active{display:block}
+.cat{width:125px;height:125px;object-fit:contain;margin:0 auto 12px}
+h1{font-size:22px;color:#ff4d79}p{line-height:1.5}
+button{border:0;border-radius:12px;padding:12px 20px;margin:6px;font-size:16px;color:white;background:#ff4d79;cursor:pointer}
+.yes{background:#45b66a}.no{background:#ff6464}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:16px 0}
+.grid img{width:100%;height:165px;object-fit:cover;border-radius:12px;border:3px solid #ffe6ed}
+.gifts{display:flex;gap:7px;width:100%;margin:18px 0}.gifts button{flex:1;padding:12px 4px;font-size:13px}
+.letter{background:#fff7f9;border:2px dashed #ffb1c3;border-radius:12px;padding:16px;text-align:left;line-height:1.6}
+input{max-width:100%;margin:8px}.hint{font-size:12px;color:#777}
+</style>
+</head>
+<body><main>
+<section id="s1" class="screen active">
+<img class="cat" src="kucing1.jpg" alt="gambar kucing">
+<h1>Kamu sayang aku gak? ❤️</h1>
+<p>Aku punya sesuatu buat kamu 💗</p>
+<button class="yes" onclick="show('s2')">Sayang dong! 💕</button>
+<button class="no" onclick="this.textContent='Masa sih? Coba lagi 😝'">Enggak 😜</button>
+</section>
+<section id="s2" class="screen">
+<img class="cat" src="kucing2.jpg" alt="gambar kucing">
+<h1>Pilih hadiah kamu 🎁</h1>
+<div class="gifts"><button onclick="show('s3')">📸 Foto</button><button onclick="show('s4')">🎵 Musik</button><button onclick="show('s5')">💌 Surat</button></div>
+<button onclick="show('s1')">Kembali</button>
+</section>
+<section id="s3" class="screen">
+<h1>Kenangan kita 📸</h1>
+<div class="grid"><img src="foto1.jpg" alt="Foto 1"><img src="foto2.jpg" alt="Foto 2"><img src="foto3.jpg" alt="Foto 3"><img src="foto4.jpg" alt="Foto 4"></div>
+<p class="hint">Empat foto kenangan untuk kamu 💗</p><button onclick="show('s2')">Kembali ke hadiah</button>
+</section>
+<section id="s4" class="screen">
+<h1>Lagu untuk kamu 🎵</h1><p>Lagu khusus untuk kamu ❤️🎶</p>
+<audio id="audio" controls preload="metadata" style="width:100%;margin:12px 0"><source src="audio.mp3" type="audio/mpeg">Browser kamu belum mendukung audio.</audio>
+<p class="hint">Tekan tombol Play untuk mendengarkan lagunya.</p>
+<button onclick="show('s2')">Kembali ke hadiah</button>
+</section>
+<section id="s5" class="screen">
+<h1>Surat kecil untuk kamu 💌</h1>
+<div class="letter">Hai kamu ❤️<br><br>Makasih sudah hadir dan jadi bagian indah dalam hari-hariku. Semoga kamu selalu bahagia, banyak senyum, dan tahu kalau kamu itu berharga. Aku harap hadiah kecil ini bisa bikin kamu tersenyum. 💗<br><br>Dengan penuh sayang ✨</div>
+<button onclick="show('s2')">Kembali ke hadiah</button>
+</section>
+</main>
+<script>
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+
+</script></body></html>
